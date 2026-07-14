@@ -1,265 +1,319 @@
-# NEXUS – Intelligent Personal Risk & Growth System
+<div align="center">
 
-> **A Personal Intelligence Engine for Everyday Life**
+# 🧠 NEXUS
 
-NEXUS is an intelligent life analytics platform designed to help individuals understand their current life stability, identify potential risks, and make informed decisions for long-term growth. Instead of focusing on a single area such as finances or productivity, NEXUS brings together multiple aspects of everyday life into one unified system.
+### Intelligent Personal Risk & Growth System
 
-The platform analyzes four key domains:
+**A Personal Intelligence Engine for Everyday Life**
 
-* 💰 Financial Stability
-* 🧠 Mental & Burnout Risk
-* ⚡ Productivity & Discipline
-* 📚 Personal Growth & Learning
+Transforming personal data into actionable insights through intelligent analytics, predictive risk assessment, and personalized recommendations.
 
-Using user-provided information, NEXUS calculates domain-specific risk scores, generates a unified **Life Stability Index (LSI)**, predicts future trends, and provides personalized recommendations.
+![PHP](https://img.shields.io/badge/PHP-8+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
----
-
-# Project Vision
-
-Modern life is complex. Financial pressure, stress, poor productivity, and lack of personal growth are often interconnected.
-
-NEXUS was created to bridge these gaps by acting as a personal intelligence engine that transforms everyday data into meaningful insights.
-
-Rather than simply tracking information, NEXUS aims to:
-
-* Identify hidden risks before they become major problems.
-* Measure overall life stability.
-* Predict future trends.
-* Recommend practical actions for improvement.
-* Encourage balanced personal development.
+</div>
 
 ---
 
-# Key Features
+# 🚀 Hero Preview
 
-## Financial Stability Module
-
-* Monthly income and expense analysis
-* Savings health assessment
-* Debt ratio calculation
-* Financial Risk Score
-* Days Until Broke estimation
-* Financial recommendations
+<p align="center">
+  <img src="docs/screenshots/landing-page.png" width="100%" alt="NEXUS Landing Page">
+</p>
 
 ---
 
-## Mental & Burnout Module
+# 📖 About NEXUS
 
-* Burnout Risk Score
-* Sleep analysis
-* Stress evaluation
-* Exercise tracking
-* Recovery recommendations
-* Wellness improvement suggestions
+NEXUS is an intelligent multi-domain life analytics platform that evaluates a person's overall life stability by analyzing four interconnected areas of life:
 
----
+- 💰 Financial Stability
+- 🧠 Mental & Burnout Risk
+- ⚡ Productivity & Discipline
+- 📚 Personal Growth & Learning
 
-## Productivity & Discipline Module
-
-* Productivity Score
-* Focus tracking
-* Goal completion analysis
-* Distraction assessment
-* Weekly productivity insights
+Unlike traditional budgeting or productivity apps, NEXUS combines these domains into a single intelligent platform that measures current performance, predicts future risks, and provides actionable recommendations to improve long-term wellbeing.
 
 ---
 
-## Personal Growth Module
+# ✨ Core Features
 
-* Growth Momentum Score
-* Skill development tracking
-* Learning consistency
-* Career direction analysis
-* Learning recommendations
+## 💰 Financial Intelligence
 
----
-
-## Life Stability Index (LSI)
-
-The system combines all four domains into a single weighted score representing overall life stability.
-
-Risk classifications include:
-
-* 🟢 Stable
-* 🟡 Moderate Risk
-* 🔴 High Risk
+- Income & expense analysis
+- Savings health monitoring
+- Debt ratio analysis
+- Spending trend visualization
+- Financial Risk Score
+- Days Until Broke estimation
+- AI financial recommendations
 
 ---
 
-## Predictive Analytics
+## 🧠 Mental & Burnout Intelligence
 
-NEXUS stores historical assessments and uses trend analysis to estimate future stability over the next three months.
-
-The prediction engine can identify:
-
-* Increasing financial risk
-* Burnout trends
-* Productivity decline
-* Growth stagnation
+- Burnout Risk Score
+- Sleep quality analysis
+- Stress monitoring
+- Exercise tracking
+- Wellness recommendations
+- Recovery planning
 
 ---
 
-## Personalized Recommendation Engine
+## ⚡ Productivity Intelligence
 
-Based on calculated scores, NEXUS generates intelligent recommendations to help users improve their overall life stability.
+- Focus tracking
+- Goal completion analysis
+- Habit monitoring
+- Productivity Score
+- Weekly performance insights
+
+---
+
+## 📚 Personal Growth Intelligence
+
+- Learning progress tracking
+- Skill development monitoring
+- Career direction analysis
+- Growth Momentum Score
+- Personalized learning recommendations
+
+---
+
+## 🤖 Intelligent Recommendation Engine
+
+NEXUS analyzes all four domains together to generate personalized recommendations.
 
 Examples include:
 
-* Reduce unnecessary expenses.
-* Increase weekly savings.
-* Improve sleep consistency.
-* Schedule recovery time.
-* Increase focused work sessions.
-* Invest more time in learning new skills.
+- Reduce unnecessary spending.
+- Increase emergency savings.
+- Improve sleep consistency.
+- Schedule recovery time.
+- Increase focused work sessions.
+- Continue positive learning habits.
 
 ---
 
-# Technology Stack
+# 📸 Screenshots
 
-### Frontend
+## 🚀 Landing Page
 
-* HTML5
-* Tailwind CSS
-* JavaScript
-* Chart.js
-* Font Awesome
+![Landing Page](docs/screenshots/landing-page.png)
 
-### Backend
-
-* PHP 8+
-* Object-Oriented PHP
-* PDO
-
-### Database
-
-* MySQL
+*A modern landing page introducing NEXUS as a personal intelligence platform.*
 
 ---
 
-# System Architecture
+## 📊 Main Dashboard
 
-The platform follows a modular architecture.
+![Dashboard](docs/screenshots/dashboard.png)
+
+*Interactive analytics dashboard displaying productivity, health, finance, and AI-generated insights.*
+
+---
+
+## 💰 Financial Intelligence Module
+
+![Financial Module](docs/screenshots/finance-module.png)
+
+*Advanced financial analytics with spending trends, risk detection, budgeting insights, and AI-powered recommendations.*
+
+---
+
+# 🛠 Technology Stack
+
+| Frontend | Backend | Database | Analytics |
+|----------|----------|-----------|-----------|
+| HTML5 | PHP 8 | MySQL | Chart.js |
+| Tailwind CSS | Object-Oriented PHP | PDO | Interactive Charts |
+| JavaScript | Sessions | SQL | Data Visualization |
+
+---
+
+# 🏗 System Architecture
 
 ```text
-User Input
-      │
-      ▼
-PHP Controllers
-      │
-      ▼
-Risk Calculation Engines
-      │
-      ├── Financial Engine
-      ├── Mental Engine
-      ├── Productivity Engine
-      ├── Growth Engine
-      │
-      ▼
-Trend Prediction Engine
-      │
-      ▼
-Recommendation Engine
-      │
-      ▼
-MySQL Database
-      │
-      ▼
-Analytics Dashboard
+                     User
+                      │
+                      ▼
+              Authentication
+                      │
+                      ▼
+             Data Collection Layer
+                      │
+                      ▼
+        ┌────────────────────────────┐
+        │    Risk Analysis Engines    │
+        └────────────────────────────┘
+          │      │      │       │
+          ▼      ▼      ▼       ▼
+   Financial Mental Productivity Growth
+          │      │      │       │
+          └──────┴──────┴───────┘
+                     │
+                     ▼
+         Life Stability Index Engine
+                     │
+                     ▼
+       Recommendation & Trend Engine
+                     │
+                     ▼
+             Analytics Dashboard
 ```
 
 ---
 
-# Project Structure
+# 📂 Project Structure
 
 ```text
 NEXUS/
 │
+├── api/
 ├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│
 ├── config/
 ├── controllers/
+├── database/
+│   └── schema.sql
+├── docs/
+│   └── screenshots/
+│       ├── landing-page.png
+│       ├── dashboard.png
+│       └── finance-module.png
 ├── engines/
 ├── models/
-├── api/
 ├── views/
-├── database/
-├── docs/
 ├── README.md
-└── LICENSE
+├── LICENSE
+└── .gitignore
 ```
 
 ---
 
-# Dashboard
+# 📈 Development Roadmap
 
-The dashboard provides an overview of the user's life stability through interactive visualizations.
+## ✅ Version 1.0
 
-It includes:
+- User Authentication
+- Dashboard UI
+- Financial Intelligence
+- Productivity Module
+- Learning Module
 
-* Life Stability Index
-* Financial Score
-* Burnout Score
-* Productivity Score
-* Growth Score
-* Trend Analysis
-* Risk Heatmap
-* Recommendation Panel
-* Prediction Dashboard
+## 🚧 Version 2.0
 
----
+- Mental Health Intelligence
+- AI Recommendation Engine
+- Trend Prediction
+- Cross-Domain Correlation
 
-# Future Roadmap
+## 🔮 Version 3.0
 
-Planned enhancements include:
-
-* AI-powered recommendation engine
-* Mobile application
-* PDF assessment reports
-* Email notifications
-* Habit tracking
-* Calendar integration
-* REST API
-* Multi-language support
-* Cloud deployment
-* Machine learning prediction models
+- Mobile Application
+- REST API
+- Email Notifications
+- PDF Reports
+- Cloud Deployment
+- AI Chat Assistant
 
 ---
 
-# Installation
+# ⚙ Installation
 
-1. Clone the repository.
-2. Install XAMPP or another PHP server.
-3. Import the MySQL database schema.
-4. Update the database credentials in `config/database.php`.
-5. Start Apache and MySQL.
-6. Open the project in your browser.
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/NEXUS.git
+```
+
+Navigate into the project:
+
+```bash
+cd NEXUS
+```
+
+Start Apache and MySQL using XAMPP.
+
+Import:
+
+```text
+database/schema.sql
+```
+
+Configure your database credentials inside:
+
+```text
+config/database.php
+```
+
+Open your browser:
+
+```text
+http://localhost/NEXUS
+```
 
 ---
 
-# Development Status
+# 🎥 Demo
 
-Current Status: **Active Development**
+## 🌐 Live Demo
 
-This project is continuously evolving with new features, improved analytics, and enhanced prediction capabilities.
+Coming Soon
+
+## 📹 Demo Video
+
+Coming Soon
 
 ---
 
-# Author
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Push to GitHub.
+5. Open a Pull Request.
+
+---
+
+# 👩‍💻 Author
 
 **Ivy Chebet**
 
 Diploma in Information Technology
 
-Project: **NEXUS – Intelligent Personal Risk & Growth System**
+**Project:** NEXUS – Intelligent Personal Risk & Growth System
+
+GitHub: https://github.com/YOUR_GITHUB_USERNAME
 
 ---
 
-# License
+# 📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-## Vision Statement
+<div align="center">
 
-**NEXUS is more than a dashboard—it is a proactive decision-support platform designed to help people understand their present, anticipate future risks, and build a more stable and fulfilling life through data-driven insights.**
+## ⭐ Support the Project
+
+If you found NEXUS interesting, consider giving this repository a **Star ⭐**.
+
+It helps others discover the project and motivates continued development.
+
+### "Understand yourself. Improve every day. Achieve more."
+
+Made with ❤️ by **Ivy Chebet**
+
+</div>
