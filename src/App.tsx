@@ -1,67 +1,44 @@
-import { useEffect, useState } from "react";
-import { getIntelligence } from "./api";
+import React, { useState } from "react";
+import Dashboard from "./components/Dashboard";
+import Finance from "./components/Finance";
+import Health from "./components/Health";
+import Journal from "./components/Journal";
+import NexusAI from "./components/NexusAI";
+import Sidebar from "./components/Sidebar";
 
 function App() {
-  const [status, setStatus] = useState("Connecting...");
-  const [online, setOnline] = useState(false);
+  const [activeTab, setActiveTab] = useState("dashboard");
+  const [isOpen, setIsOpen] = useState(true);
 
-  useEffect(() => {
-    getIntelligence()
-      .then((data) => {
-        setStatus(`${data.message} (${data.status})`);
-        setOnline(true);
-      })
-      .catch(() => {
-        setStatus("Engine Offline");
-        setOnline(false);
-      });
-  }, []);
+  const renderPage = () => {
+    switch (activeTab) {
+      case "finance":
+        return <Finance />;
+      case "health":
+        return <Health />;
+      case "journal":
+        return <Journal />;
+      case "nexus-ai":
+        return <NexusAI />;
+      default:
+        return <Dashboard />;
+    }
+  };
 
   return (
-    <div style={{ fontFamily: "Arial", padding: "30px" }}>
-      <h1 style={{ marginBottom: "10px" }}>🚀 Nexus Dashboard</h1>
+    <div className="flex min-h-screen bg-gradient-to-br from-zinc-950 via-black to-zinc-900 text-white">
+      <Sidebar
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
 
-      <div
-        style={{
-          padding: "15px",
-          borderRadius: "10px",
-          backgroundColor: online ? "#e6f7ed" : "#ffe6e6",
-          marginBottom: "30px",
-        }}
-      >
-        <strong>Status:</strong> {status}
-      </div>
-
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
-        <div style={cardStyle}>
-          <h3>📊 Productivity</h3>
-          <p>Track daily goals and performance metrics.</p>
-        </div>
-
-        <div style={cardStyle}>
-          <h3>💰 Finance</h3>
-          <p>Monitor expenses and financial analytics.</p>
-        </div>
-
-        <div style={cardStyle}>
-          <h3>🤖 AI Insights</h3>
-          <p>Predictive intelligence & decision support.</p>
-        </div>
-
-        <div style={cardStyle}>
-          <h3>📈 Analytics</h3>
-          <p>View trends and performance growth.</p>
-        </div>
+      <div className="flex-1 ml-64 p-4">
+        {renderPage()}
       </div>
     </div>
   );
 }
-
-const cardStyle = {
-  padding: "20px",
-  borderRadius: "12px",
-  backgroundColor: "#f4f4f4",
-  boxShadow: "0px 4px 10px rgba(0,0,0,0.05)",
-};
 
 export default App;

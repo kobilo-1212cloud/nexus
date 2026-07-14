@@ -14,7 +14,7 @@ import {
   BookOpen,
   DollarSign
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
+const cn = (...classes: string[]) => classes.filter(Boolean).join(" ");
 import { useAuth } from '@/context/AuthContext';
 
 interface SidebarProps {
@@ -25,7 +25,8 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ activeTab, setActiveTab, isOpen, setIsOpen }: SidebarProps) => {
-  const { user, logout } = useAuth();
+  const user = { name: "Ivy" };
+const logout = () => alert("Logged out");
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'blueprint', label: 'Daily Blueprint', icon: Map },
@@ -89,8 +90,8 @@ const Sidebar = ({ activeTab, setActiveTab, isOpen, setIsOpen }: SidebarProps) =
                   className={cn(
                     "flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                     isActive 
-                      ? "bg-white/10 text-white" 
-                      : "text-zinc-400 hover:bg-white/5 hover:text-white"
+                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                      : "text-zinc-400 hover:hover:bg-white/10 hover:scale-[1.02]"
                   )}
                 >
                   <Icon size={18} />

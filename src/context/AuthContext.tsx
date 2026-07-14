@@ -1,72 +1,40 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from "react";
 
-interface User {
-  id: string;
-  email: string;
-  name: string;
-}
+export const AuthContext = createContext<any>(null);
 
-interface AuthContextType {
-  user: User | null;
-  login: (email: string, password: string) => Promise<void>;
-  signup: (email: string, password: string, name: string) => Promise<void>;
-  logout: () => void;
-  isLoading: boolean;
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+export const AuthProvider = ({ children }: any) => {
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Simulate checking for existing session
-    const storedUser = localStorage.getItem('nexus_user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-    setIsLoading(false);
+    const savedUser = localStorage.getItem("nexusUser");
+    if (savedUser) setUser(JSON.parse(savedUser));
   }, []);
 
-  const login = async (email: string, _password: string) => {
-    setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    const mockUser = { id: '1', email, name: email.split('@')[0] };
-    setUser(mockUser);
-    localStorage.setItem('nexus_user', JSON.stringify(mockUser));
-    setIsLoading(false);
+  const login = (email: string, password: string) => {
+    const savedUser = JSON.parse(localStorage.getItem("nexusUser") || "{}");
+
+    if (savedUser.email === email && savedUser.password === password) {
+      setUser(savedUser);
+      localStorage.setItem("isLoggedIn", "true");
+    } else {
+      alert("Invalid credentials");
+    }
   };
 
-  const signup = async (email: string, _password: string, name: string) => {
-    setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    const mockUser = { id: Date.now().toString(), email, name };
-    setUser(mockUser);
-    localStorage.setItem('nexus_user', JSON.stringify(mockUser));
-    setIsLoading(false);
+  const signup = (email: string, password: string) => {
+    const newUser = { email, password };
+    localStorage.setItem("nexusUser", JSON.stringify(newUser));
+    setUser(newUser);
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('nexus_user');
+    localStorage.removeItem("isLoggedIn");
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, signup, logout, isLoading }}>
+    <AuthContext.Provider value={{ user, login, signup, logout }}>
       {children}
     </AuthContext.Provider>
   );
-};
-
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
 };
